@@ -1,0 +1,53 @@
+<div class="sidebar">
+    <div id="sidebar-menu-toggle">
+        <img class="sidebar__menu-icon" src="images/icon-menu.svg">
+    </div>
+    <div class="sidebar__link__container">
+        <a href="/" class="sidebar__link">
+            <div class="sidebar__link__text">&#8212; Home</div>
+        </a>
+        <a href="/" class="sidebar__link">
+            <div class="sidebar__link__text">&#8212; My Projects</div>
+        </a>
+        <a href="/" class="sidebar__link">
+            <div class="sidebar__link__text">&#8212; About Me</div>
+        </a>
+    </div>
+    <div class="sidebar__social__container">
+        <div>
+            <a href="#">
+                <img class="sidebar__social-icon" src="images/icon-linkedin.svg">
+            </a>
+        </div>
+        <div>
+            <a href="https://github.com/aeuhim">
+                <img class="sidebar__social-icon" src="images/icon-github.svg">
+            </a>
+        </div>
+        <div>
+            <a href="#">
+                <img class="sidebar__social-icon" src="images/icon-twitter.svg">
+            </a>
+        </div>
+        <div>
+            <a href="https://www.facebook.com/aeuhim">
+                <img class="sidebar__social-icon" src="images/icon-facebook.svg">
+            </a>
+        </div>
+    </div>
+    <script>
+        const sidebarMenuToggle = document.getElementById("sidebar-menu-toggle")
+        const sidebarMenuIcon = document.querySelector(".sidebar__menu-icon")
+        const sidebar = document.querySelector(".sidebar")
+        const sidebarLinkContainer = document.querySelector(".sidebar__link__container")
+        const sidebarSocialContainer = document.querySelector(".sidebar__social__container")
+        const bootstrapWrapper = document.querySelector(".bootstrap-wrapper")
+        sidebarMenuToggle.onclick = () => {
+            sidebarMenuIcon.classList.toggle("sidebar__menu-icon--expand")
+            sidebar.classList.toggle("sidebar--expand")
+            sidebarLinkContainer.classList.toggle("sidebar__link__container--expand")
+            sidebarSocialContainer.classList.toggle("sidebar__social__container--expand")
+            bootstrapWrapper.classList.toggle("bootstrap-wrapper--expand")
+        }
+    </script>
+</div>
