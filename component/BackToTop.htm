@@ -1,0 +1,34 @@
+<div class="progress-wrapper">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+    <script>
+        const progressPath = document.querySelector(".progress-wrapper path");
+        const pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = "none";
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = "stroke-dashoffset 10ms linear";
+
+        window.onscroll = () => {
+            const scrollInitial = 0
+            const scrollOffset = document.documentElement.scrollTop
+            const outerWindowHeight = document.documentElement.offsetHeight - window.innerHeight
+            const progress = pathLength - scrollOffset * pathLength / outerWindowHeight
+            progressPath.style.strokeDashoffset = progress
+            if (scrollOffset > scrollInitial) {
+                document.querySelector(".progress-wrapper").classList.add("active-progress")
+                return
+            }
+            document.querySelector(".progress-wrapper").classList.remove("active-progress")
+        }
+
+        document.querySelector(".progress-wrapper").onclick = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            })
+        }
+    </script>
+</div>

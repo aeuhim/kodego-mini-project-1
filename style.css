@@ -99,3 +99,69 @@
     left: 250px;
     transition: var(--sliding-animation);
 }
+
+.progress-wrapper {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    border-radius: 50px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 200ms linear;
+}
+
+.progress-wrapper.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.progress-wrapper::after {
+    position: absolute;
+    content: '↑';
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    color: #008080;
+    top: 0;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    transition: all 200ms linear;
+}
+
+.progress-wrapper::before {
+    position: absolute;
+    content: '↑';
+    text-align: center;
+    line-height: 46px;
+    font-size: 24px;
+    opacity: 0;
+    background-color: #005c5c;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.progress-wrapper:hover::before {
+    opacity: 1;
+}
+
+.progress-wrapper svg path {
+    fill: none;
+}
+
+.progress-wrapper svg.progress-circle path {
+    stroke: #008080;
+    stroke-width: 4;
+}
