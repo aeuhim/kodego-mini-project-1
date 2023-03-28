@@ -10,7 +10,7 @@
 .sidebar {
     position: fixed;
     width: 250px;
-    height: 100vh;
+    height: 100%;
     background-color: #C4E1FF;
     left: -200px;
     transition: var(--sliding-animation);
