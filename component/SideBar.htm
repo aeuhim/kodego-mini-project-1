@@ -1,7 +1,8 @@
 <div class="sidebar">
-    <div id="sidebar-menu-toggle">
-        <img class="sidebar__menu-icon" src="images/icon-menu.svg" alt="menu icon">
-    </div>
+    <input type="checkbox" id="menu">
+    <label for="menu" class="icon">
+        <div class="menu"></div>
+    </label>
     <div class="sidebar__link__container">
         <div class="sidebar__link">
             <a href="#" class="sidebar__link__text">&#8212; Home</a>
@@ -41,14 +42,12 @@
         </div>
     </div>
     <script>
-        const sidebarMenuToggle = document.getElementById("sidebar-menu-toggle")
-        const sidebarMenuIcon = document.querySelector(".sidebar__menu-icon")
+        const sidebarMenuToggle = document.querySelector("#menu")
         const sidebar = document.querySelector(".sidebar")
         const sidebarLinkContainer = document.querySelector(".sidebar__link__container")
         const sidebarSocialContainer = document.querySelector(".sidebar__social__container")
         const bootstrapWrapper = document.querySelector(".bootstrap-wrapper")
         sidebarMenuToggle.onclick = () => {
-            sidebarMenuIcon.classList.toggle("sidebar__menu-icon--expand")
             sidebar.classList.toggle("sidebar--expand")
             sidebarLinkContainer.classList.toggle("sidebar__link__container--expand")
             sidebarSocialContainer.classList.toggle("sidebar__social__container--expand")

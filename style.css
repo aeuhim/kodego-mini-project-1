@@ -21,18 +21,70 @@
     transition: var(--sliding-animation);
 }
 
-.sidebar__menu-icon {
-    position: relative;
-    width: 30px;
-    height: 50px;
-    cursor: pointer;
-    left: 210px;
-    transition: var(--sliding-animation);
+input#menu {
+    display: none;
 }
 
-.sidebar__menu-icon--expand {
-    left: 210px;
-    transition: var(--sliding-animation);
+.icon {
+    cursor: pointer;
+    display: block;
+    width: 50px;
+    height: 50px;
+}
+
+label.icon {
+    left: 200px;
+    position: relative;
+}
+
+.icon .menu,
+.icon .menu::before,
+.icon .menu::after {
+    background: #000000;
+    content: '';
+    display: block;
+    height: 1.1px;
+    position: absolute;
+    transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+    width: 20px;
+}
+
+.icon:hover .menu,
+.icon:hover .menu::before,
+.icon:hover .menu::after {
+    height: 1.3px;
+}
+
+.icon .menu {
+    left: 15px;
+    top: 25px;
+    transition: background 0.3s step-end;
+}
+
+.icon .menu::before {
+    top: -6px;
+}
+
+.icon .menu::after {
+    top: 6px;
+}
+
+#menu:checked+.icon .menu {
+    background: none;
+}
+
+#menu:checked+.icon .menu::before {
+    transform: rotate(45deg);
+}
+
+#menu:checked+.icon .menu::after {
+    transform: rotate(-45deg);
+}
+
+#menu:checked+.icon .menu::before,
+#menu:checked+.icon .menu::after {
+    top: 0;
+    transition: top ease .3s, transform ease .3s .3s;
 }
 
 .sidebar__link__container {
