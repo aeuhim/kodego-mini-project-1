@@ -2,6 +2,10 @@
     --sliding-animation: left 0.5s ease-in-out;
 }
 
+#tracker {
+    position: absolute;
+}
+
 #root {
     overflow-x: hidden;
     background-color: #C4E1FF;
